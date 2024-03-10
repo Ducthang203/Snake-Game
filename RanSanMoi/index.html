@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="styles.css"> 
+
    <title>Rắn Săn Mồi</title>
 </head>
+<style>
+   /* CSS for styling the game container and points panel */
+   #game-container {
+      float: right;
+      /* Float the game container to the left */
+      width: 100%;
+      /* Take up 80% of the width */
+   }
+   #points-panel{
+      color:brown;
+      font-size: xx-large;
+   }
+
+   #points-panel {
+      float: left;
+      /* Float the points panel to the right */
+      width: 20%;
+      /* Take up 20% of the width */
+      padding: 10px;
+      /* Add padding for spacing */
+      box-sizing: border-box;
+      /* Include padding and border in the width */
+   }
+</style>
+
 <body>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
-   <script src="config.js" charset="utf-8"></script>
-   <script src="snake.js" charset="utf-8"></script>
-   <script src="food.js" charset="utf-8"></script>
-   <script src="game.js" charset="utf-8"></script>
+   <div id="game-container">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+      <script src="config.js" charset="utf-8"></script>
+      <script src="snake.js" charset="utf-8"></script>
+      <script src="food.js" charset="utf-8"></script>
+      <script src="game.js" charset="utf-8"></script>
+      <audio id="eatSound" src="images/beep.mp3" preload="auto"></audio>
+      <audio id="dieSound" src="images/die.mp3" preload="auto"></audio>
+
+   </div>
+   <div id="points-panel">
+      <h2>Points</h2>
+      <span id="points">0</span>
+      <h2>Speed</h2>
+      <span id="speed">0</span>
+   </div>
 </body>
+
 </html>

@@ -10,7 +10,6 @@ class Food{
       this.y = Math.floor(this.y / GRID_SIZE) * GRID_SIZE;
    }
    show(){
-      fill(255);
-      rect(this.x, this.y, GRID_SIZE, GRID_SIZE);
+      image(foodBG, this.x, this.y, GRID_SIZE, GRID_SIZE);
    }
 }

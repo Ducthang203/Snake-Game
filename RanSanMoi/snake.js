@@ -1,12 +1,12 @@
 class Snake {
-   constructor(){
-      this.vel = createVector(0,0);
-      this.head = createVector(0,0);
+   constructor() {
+      this.vel = createVector(0, 0);
+      this.head = createVector(0, 0);
       this.length = 0;
       this.body = [];
       this.isDead = false;
    }
-   update(){
+   update() {
       this.body.push(createVector(this.head.x, this.head.y));
 
       this.head.x += this.vel.x * GRID_SIZE;
@@ -15,15 +15,12 @@ class Snake {
       this.head.x = (this.head.x + WITDH) % WITDH;
       this.head.y = (this.head.y + HEIGHT) % HEIGHT;
 
-      if(this.length < this.body.length)
-      {
+      if (this.length < this.body.length) {
          this.body.shift();
       }
 
-      for(let vector of this.body)
-      {
-         if(vector.x == this.head.x && vector.y == this.head.y)
-         {
+      for (let vector of this.body) {
+         if (vector.x == this.head.x && vector.y == this.head.y) {
             this.isDead = true;
          }
       }
@@ -32,13 +29,10 @@ class Snake {
    show() {
       noStroke();
       // Vẽ đầu rắn với màu vàng
-      fill(255, 255, 0);
-      rect(this.head.x, this.head.y, GRID_SIZE, GRID_SIZE);
-
-      // Vẽ phần thân của rắn với màu xám
-      fill(287);
-      for(let vector of this.body) {
-         rect(vector.x, vector.y, GRID_SIZE, GRID_SIZE);
+      image(snakeHead, this.head.x, this.head.y, GRID_SIZE, GRID_SIZE);
+         
+      for (let vector of this.body) {
+         image(snakeBody, vector.x, vector.y, GRID_SIZE, GRID_SIZE);
       }
    }
 }

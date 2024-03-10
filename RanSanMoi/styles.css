@@ -1,0 +1,22 @@
+/* Set the background color for the whole page */
+body {
+    background-color: #f0f0f0; /* Example color */
+}
+
+/* Style for the game container */
+#game-container {
+    float: left;
+    width: 80%;
+    background-color: #ffffff; /* Example color */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for the points panel */
+#points-panel {
+    float: right;
+    width: 20%;
+    background-color: #ffffff; /* Example color */
+    padding: 10px;
+    box-sizing: border-box;
+}
